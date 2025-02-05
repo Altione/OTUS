@@ -12,8 +12,11 @@ service mysql restart;
 ### заходим под Рутом
 sudo mysql;
 
+### НАВЕРНОЕ НЕ НАДО задаем пароль для root, вот так заходить: mysql -p"Testpass1$"
+ALTER USER 'root'@'localhost' IDENTIFIED WITH 'caching_sha2_password' BY 'Testpass1$';
+
 ### задаем пароль для slave
-CREATE USER repl@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'oTUSlave#2020';
+mysql -u root -e "CREATE USER repl@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'oTUSlave#2020';"
 
 ### Даём ему права на репликацию и ввобщше все
-GRANT REPLICATION SLAVE ON *.* TO repl@'%';
+mysql -u root -e "GRANT REPLICATION SLAVE ON *.* TO repl@'%';"
