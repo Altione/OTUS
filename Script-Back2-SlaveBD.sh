@@ -9,14 +9,11 @@ cp Slave-mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf;
 ### рестартуем mysql
 service mysql restart;
 
-### заходим под Рутом
-sudo mysql;
-
 ### на всякий случай останавливаем текущую репликацию
-STOP REPLICA;
+mysql -u root -e "STOP REPLICA;"
 
 ### Устанавливаем мастер для реплики
-CHANGE REPLICATION SOURCE TO SOURCE_HOST='172.16.10.110', SOURCE_USER='repl', SOURCE_PASSWORD='oTUSlave#2020', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;
+mysql -u root -e "CHANGE REPLICATION SOURCE TO SOURCE_HOST='172.16.10.110', SOURCE_USER='repl', SOURCE_PASSWORD='oTUSlave#2020', SOURCE_AUTO_POSITION = 1, GET_SOURCE_PUBLIC_KEY = 1;"
 
 ### Стартуем реплику
-START REPLICA;
+mysql -u root -e "START REPLICA;"
