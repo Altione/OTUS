@@ -9,12 +9,6 @@ cp Master-mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf;
 ### рестартуем mysql
 service mysql restart;
 
-### заходим под Рутом
-sudo mysql;
-
-### НАВЕРНОЕ НЕ НАДО задаем пароль для root, вот так заходить: mysql -p"Testpass1$"
-ALTER USER 'root'@'localhost' IDENTIFIED WITH 'caching_sha2_password' BY 'Testpass1$';
-
 ### задаем пароль для slave
 mysql -u root -e "CREATE USER repl@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'oTUSlave#2020';"
 
