@@ -21,7 +21,7 @@ for db in $databases; do
         echo "Выгружаем таблицу: $table из базы $db"
 
         # Делаем выгрузку таблицы в файл внутри папки базы данных
-        mysqldump -u"$USER" --set-gtid-purged=OFF "$db" "$table" > "$OUTPUT_DIR/$db/$table"
+        mysqldump -u"$USER" --set-gtid-purged=OFF --all-databases --master-data=2 --single-transaction --flush-logs --quick --routines --triggers "$db" "$table" > "$OUTPUT_DIR/$db/$table"
     done
 done
 
