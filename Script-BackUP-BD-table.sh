@@ -1,4 +1,5 @@
 #!/bin/bash
+# Скрипт backup BD table
 
 USER="root"
 OUTPUT_DIR="/home/altione/DB/DB"
