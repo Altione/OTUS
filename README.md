@@ -15,17 +15,17 @@
 
 **Шаги:**
 
-1. Заходим под `root`:
+Заходим под `root`:
    ```bash
    sudo su
    ```
-2. Скачиваем скрипт, даем права и запускаем:
+Скачиваем скрипт, даем права и запускаем:
    ```bash
    wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-Front.sh
    chmod +x Script-Front.sh
    ./Script-Front.sh
    ```
-3. Должен появиться **NGINX**.
+Должен появиться **NGINX**.
 ➡️ [http://172.16.10.109](http://172.16.10.109)
 ---
 
@@ -33,17 +33,18 @@
 
 ### 🔹 **Настройка Web-сервера (Apache2)**
 
-1. Заходим под `root`:
+Заходим под `root`:
    ```bash
    sudo su
    ```
-2. Устанавливаем Apache2:
+Устанавливаем Apache2:
    ```bash
    wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-Back1-Master.sh
    chmod +x Script-Back1-Master.sh
    ./Script-Back1-Master.sh
    ```
-3. Должен появиться **Apache**.
+Должен появиться **Apache**.
+➡️ [http://172.16.10.110](http://172.16.10.110)
 
 ### 🔹 **Настройка MySQL Master**
 
@@ -71,16 +72,18 @@ chmod +x Script-CMS.sh
 
 ### 🔹 **Настройка Web-сервера (Apache2)**
 
-1. Заходим под `root`:
+Заходим под `root`:
    ```bash
    sudo su
    ```
-2. Устанавливаем Apache2:
+Устанавливаем Apache2:
    ```bash
    wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-Back2-Slave.sh
    chmod +x Script-Back2-Slave.sh
    ./Script-Back2-Slave.sh
    ```
+Должен появиться **Apache**.
+➡️ [http://172.16.10.111](http://172.16.10.111)
 
 ### 🔹 **Настройка MySQL Replica**
 
