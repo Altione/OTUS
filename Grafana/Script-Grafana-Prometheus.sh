@@ -9,5 +9,5 @@ sudo dpkg -i grafana_11.5.1_amd64.deb
 #рестартуем демона, стартуем сервер (admin/admin)
 sleep 3;
 systemctl daemon-reload;
-sleep 3;
+sleep 10;
 systemctl start grafana-server;
