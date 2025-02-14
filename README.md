@@ -46,7 +46,7 @@
    ```
 Должен появиться **Apache** ➡️ [http://172.16.10.110](http://172.16.10.110)
 
-### 🔹 **Настройка MySQL Master**
+### **Настройка MySQL Master**
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-Back1-MasterBD.sh
@@ -54,7 +54,7 @@ chmod +x Script-Back1-MasterBD.sh
 ./Script-Back1-MasterBD.sh
 ```
 
-### 🔹 **Установка CMS (WordPress)**
+### **Установка CMS (WordPress)**
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-CMS.sh
@@ -68,9 +68,9 @@ chmod +x Script-CMS.sh
 
 ---
 
-## **🖥️ 3) Установка Slave (Back2)**
+## **🖥️ 3 - Установка Slave (Back2)**
 
-### 🔹 **Настройка Web-сервера (Apache2)**
+### **Настройка Web-сервера (Apache2)**
 
 Заходим под `root`:
    ```bash
@@ -84,7 +84,7 @@ chmod +x Script-CMS.sh
    ```
 Должен появиться **Apache** ➡️ [http://172.16.10.111](http://172.16.10.111)
 
-### 🔹 **Настройка MySQL Replica**
+### **Настройка MySQL Replica**
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-Back2-SlaveBD.sh
@@ -98,7 +98,7 @@ chmod +x Script-Back2-SlaveBD.sh
 mysql -u root -e "show replica status\G"
 ```
 
-### 🔹 **Установка CMS** (аналогично мастеру, но без БД)
+### **Установка CMS** (аналогично мастеру, но без БД)
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-CMS.sh
@@ -108,24 +108,24 @@ chmod +x Script-CMS.sh
 
 ---
 
-## **📌 4) Финальная настройка базы (Back1)**
+## **📌 4 - Финальная настройка базы (Back1)**
 
-### 🔹 **Устанавливаем базу данных**
+### **Устанавливаем базу данных**
 
 ➡️ [http://172.16.10.110/wp-admin/install.php](http://172.16.10.110/wp-admin/install.php)\
 *(логин/пароль администратора вводим на странице)*
 
 ---
 
-## **📌 5) Проверка репликации на Back2**
+## **📌 5 - Проверка репликации на Back2**
 
-### 🔹 **Проверяем базы на Slave**
+### **Проверяем базы на Slave**
 
 ```bash
 mysql -u root -e "show databases;"
 ```
 
-### 🔹 **Дамп MySQL с реплики** (файлы сохранятся в `/home/altione/DB/`)
+### **Дамп MySQL с реплики** (файлы сохранятся в `/home/altione/DB/`)
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-BackUP-BD-table.sh
@@ -135,7 +135,7 @@ chmod +x Script-BackUP-BD-table.sh
 
 ---
 
-## **📊 6) Установка ELK + Grafana**
+## **📊 6 - Установка ELK + Grafana**
 
 *(Подробности в отдельной инструкции.)*
 
