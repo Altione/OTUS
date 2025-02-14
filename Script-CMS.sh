@@ -1,4 +1,4 @@
-###устанавливаем php
+###устанавливаем php для CMS
 sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-json php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y;
 
 ### скачать wordpress, распаковать
