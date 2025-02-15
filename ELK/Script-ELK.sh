@@ -1,4 +1,7 @@
 ### закинул deb пакеты в home
+### меняем hostname для конфига elasticsearch надо
+sudo hostnamectl set-hostname ELK-Grafana && sudo sed -i "s/^127.0.1.1 .*/127.0.1.1 ELK-Grafana/" /etc/hosts && echo "✅ Hostname изменен на: $(hostname)"
+
 ### для работы нужен jdk
 apt install default-jdk -y;
 
