@@ -28,6 +28,19 @@
 
 Должен появиться **NGINX** ➡️ [http://172.16.10.109](http://172.16.10.109)
 
+
+## **📊 Установка FileBeat на Front 172.16.10.109**
+Положить filebeat.deb в текущую папку. Используется dpkg -i *.deb поэтому лучше остальные пакеты deb лучше удалить. 
+```bash
+scp -r altione@172.16.10.103:/home/altione/ELK/filebeat_8.9.1_amd64-224190-bc3f59.deb /home/altione/
+```
+Запустить установку
+```bash
+wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/ELK/Script-Filebeat-Front.sh
+chmod +x Script-Filebeat-Front.sh
+./Script-Filebeat-Front.sh
+```
+
 ---
 
 ## **🖥️ 2 - Установка Master (Back1) 172.16.10.110**
@@ -156,17 +169,6 @@ chmod +x Script-ELK.sh
 ./Script-ELK.sh
 ```
 
-## **📊 Установка FileBeat на Front 172.16.10.109**
-Положить filebeat.deb в текущую папку. Используется dpkg -i *.deb поэтому лучше остальные пакеты deb лучше удалить. 
-```bash
-scp -r altione@172.16.10.103:/home/altione/ELK/filebeat_8.9.1_amd64-224190-bc3f59.deb /home/altione/
-```
-Запустить установку
-```bash
-wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/ELK/Script-Filebeat-Front.sh
-chmod +x Script-Filebeat-Front.sh
-./Script-Filebeat-Front.sh
-```
 
 
 ---
