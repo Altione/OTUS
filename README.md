@@ -147,6 +147,10 @@ chmod +x Script-Grafana-Prometheus.sh
 
 Нужно положить пакеты в /home
 ```bash
+scp -r altione@172.16.10.103:/home/altione/ELK/*.deb /home/altione/
+```
+Запустить установку
+```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/ELK/Script-ELK.sh
 chmod +x Script-ELK.sh
 ./Script-ELK.sh
@@ -154,6 +158,10 @@ chmod +x Script-ELK.sh
 
 ## **📊 Установка FileBeat на Front 172.16.10.109**
 Положить filebeat.deb в текущую папку. Используется dpkg -i *.deb поэтому лучше остальные пакеты deb лучше удалить. 
+```bash
+scp -r altione@172.16.10.103:/home/altione/ELK/filebeat_8.9.1_amd64-224190-bc3f59.deb /home/altione/
+```
+Запустить установку
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/ELK/Script-Filebeat-Front.sh
 chmod +x Script-Filebeat-Front.sh
