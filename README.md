@@ -127,7 +127,19 @@ chmod +x Script-BackUP-BD-table.sh
 ./Script-BackUP-BD-table.sh
 ```
 
+Копируем БД на резервный сервер
+```bash
+scp -r /home/altione/DB altione@172.16.10.103:/home/altione/DB
+```
+
+
 ## **📊 6 - Установка Server ELK + Grafana 172.16.10.112**
+
+Нужно положить пакеты ELK+Grafana в /home
+```bash
+scp -r altione@172.16.10.103:/home/altione/ELK/*.deb /home/altione/
+```
+
 Устанавливаем Grafana. Положить файл графаны в /home откуда запускается скрипт
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Grafana/Script-Grafana-Prometheus.sh
@@ -137,10 +149,6 @@ chmod +x Script-Grafana-Prometheus.sh
 
 Устанавливаем ELK
 
-Нужно положить пакеты в /home
-```bash
-scp -r altione@172.16.10.103:/home/altione/ELK/*.deb /home/altione/
-```
 Запустить установку
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/ELK/Script-ELK.sh
@@ -157,8 +165,12 @@ chmod +x Script-ELK.sh
 
 ### **1️⃣ Восстановление Master (Back1)**
 
-📌 **Загружаем сохраненную базу**, затем **восстанавливаем базу**:
-
+📌 **Загружаем сохраненную базу**
+Копируем БД на резервный сервер
+```bash
+scp -r altione@172.16.10.103:/home/altione/DB /home/altione/DB
+```
+Затем **восстанавливаем базу**:
 ```bash
 for file in /home/altione/DB/WP/*; do
     mysql -u root WP < "$file"
