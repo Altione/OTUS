@@ -128,7 +128,7 @@ chmod +x Script-BackUP-BD-table.sh
 ```
 
 ## **📊 6 - Установка Server ELK + Grafana 172.16.10.112**
-Устанавливаем Grafana
+Устанавливаем Grafana. Положить файл графаны в /home откуда запускается скрипт
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Grafana/Script-Grafana-Prometheus.sh
 chmod +x Script-Grafana-Prometheus.sh
