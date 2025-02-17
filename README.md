@@ -172,7 +172,7 @@ scp -r altione@172.16.10.103:/home/altione/DB /home/altione/DB
 ```
 Затем **восстанавливаем базу**:
 ```bash
-for file in /home/altione/DB/WP/*; do
+for file in /home/altione/DB/DB/WP/*; do
     mysql -u root WP < "$file"
 done
 ```
