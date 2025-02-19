@@ -36,3 +36,6 @@ systemctl enable --now logstash.service;
 systemctl restart logstash.service;
 systemctl restart filebeat;
 systemctl enable filebeat;
+systemctl restart kibana;
+systemctl restart logstash;
+systemctl restart elasticsearch;
