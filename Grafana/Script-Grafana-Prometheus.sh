@@ -10,3 +10,4 @@ sleep 3;
 systemctl daemon-reload;
 sleep 3;
 systemctl start grafana-server;
+rm -r grafana_11.5.1_amd64.deb;
