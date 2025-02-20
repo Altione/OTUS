@@ -96,7 +96,7 @@ chmod +x Script-Back2-SlaveBD.sh
 mysql -u root -e "show replica status\G"
 ```
 
-### **Установка CMS** (аналогично мастеру, но без БД)
+### **Установка CMS** (аналогично мастеру, с подключением к БД в Мастер)
 
 ```bash
 wget https://raw.githubusercontent.com/Altione/OTUS/refs/heads/main/Script-CMS.sh
