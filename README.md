@@ -182,5 +182,5 @@ done
 
 После восстановления Grafana, делаем манипуляции в Web и добавляем в 
 /etc/prometheus/prometheus.yml фртонт 
-- targets: ['localhost:9100', '172.16.10.109:9090']
+- targets: ['localhost:9100', '172.16.10.109:9100']
 
