@@ -171,7 +171,7 @@ chmod +x Script-ELK.sh
 ```bash
 scp -r altione@172.16.10.103:/home/altione/DB /home/altione/DB
 ```
-Затем **восстанавливаем базу** (база WP создается автоматом, надо ее только наполнить):
+Затем **восстанавливаем базу** (база WP создается скриптами выше, но надо ее залить из бэкапа):
 ```bash
 for file in /home/altione/DB/DB/WP/*; do
     mysql -u root WP < "$file"
