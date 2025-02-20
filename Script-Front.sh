@@ -7,3 +7,4 @@ cp nginx-sites-available /etc/nginx/sites-available/default;
 
 ### рестарт nginx
 systemctl restart nginx;
+apt install prometheus -y;
